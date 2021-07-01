@@ -1,1 +1,1 @@
-# react-image-cropper
+# simple-image-cropper
