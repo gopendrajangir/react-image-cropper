@@ -65,7 +65,7 @@ Avatar.defaultProps = {
 }
 
 Avatar.propTypes = {
-  avatarProps: PropTypes.object.isRquired
+  avatarProps: PropTypes.object.isRequired
 }
 
 export default Avatar;
