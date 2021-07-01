@@ -166,7 +166,8 @@ export function useCropper(cb) {
       const { url, width, height } = this.props;
 
       const avatarProps = {
-        top, left, zoom, dimensions, url, width, height, imageRef: this.imageRef,
+        top, left, zoom, dimensions, url, width, height,
+        imageRef: this.imageRef,
         canvasRef: this.canvasRef,
         hiddenCanvasRef: this.hiddenCanvasRef,
         onMouseDown: this.onMouseDown
@@ -178,7 +179,12 @@ export function useCropper(cb) {
       }
 
       return (
-        cb({ avatarProps, zoomSliderProps, onSave: this.onSave, onCancel: this.props.onCancel })
+        cb({
+          avatarProps,
+          zoomSliderProps,
+          onSave: this.onSave,
+          onCancel: this.props.onCancel
+        })
       )
     }
   }
