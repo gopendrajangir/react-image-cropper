@@ -1,6 +1,6 @@
 # simple-image-cropper
 
-![alt text](https://github.com/gopendrajangir/simple-image-cropper/blob/main/simple-image-cropper-customizable.png)
+![alt text](https://github.com/gopendrajangir/simple-image-cropper/blob/main/simple-image-cropper-customizable%20.png)
 
 simple-image-cropper is a customizable ReactJS library for cropping some specific part of an image by zooming and and selecting specific portion of image.
 
