@@ -128,3 +128,52 @@ onSave prop accepts a function which is passed to a button through useCropper fu
 
 ##### onCancel: function
 onCancel prop accepts a function which is passed to a button through useCropper function and is called when this button is clicked. Not Required.
+
+### Additional Help
+If you are using file type input for image you will need to convert that file into data url using [fileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) api.
+<br>
+You can use code below to convert input file to data url.
+<br>
+```javascript
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      imageUrl: null,
+    }
+    this.onFileChange = this.onFileChange.bind(this);
+  }
+
+  onFileChange(e) {
+    const file = e.target.files[0];
+
+    const fileReader = new FileReader();
+
+    fileReader.readAsDataURL(file);
+
+    fileReader.onloadend = (e) => {
+      this.setState({ imageUrl: e.target.result});
+    }
+  }
+
+  render() {
+
+    const { imageUrl } = this.state;
+
+    return (
+      <div className="app">
+          <input type="file" onChange={this.onFileChange} />
+          ...
+          <Cropper
+            width={200}
+            height={200}
+            url={imageUrl}
+            onCancel={this.onCancel}
+            onSave={this.onSave}
+          />
+      </div>
+    )
+  }
+}
+```
+
