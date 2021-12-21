@@ -22,16 +22,18 @@ import { useCropper, Avatar, ZoomSlider } from 'simple-image-cropper';
 ### Basic Example
 
 ```javascript
-const Cropper = useCropper(({ avatarProps, zoomSliderProps, onSave, onCancel }) => {
-  return (
-    <div>
-      <Avatar avatarProps={avatarProps} />
-      <ZoomSlider zoomSliderProps={zoomSliderProps} />
-      <button type="button" onClick={onCancel}>Cancel</button>
-      <button type="button" onClick={onSave}>Save</button>
-    </div>
-   );
-});
+const Cropper = () => {
+  return useCropper(({ avatarProps, zoomSliderProps, onSave, onCancel }) => {
+    return (
+      <div>
+        <Avatar avatarProps={avatarProps} />
+        <ZoomSlider zoomSliderProps={zoomSliderProps} />
+        <button type="button" onClick={onCancel}>Cancel</button>
+        <button type="button" onClick={onSave}>Save</button>
+      </div>
+    );
+  })
+};
 
 class App extends React.Component() {
   constructor(props){
@@ -61,9 +63,11 @@ class App extends React.Component() {
 useCropper is a higher order component function which provides all the necessary props required by the Avatar and ZoomSlider component and by the cancel and save button and returns a Cropper Component.
 
 ```javascript
-const Cropper = useCropper(({ avatarProps, zoomSliderProps, onSave, onCancel }) => {
-  return ...
-}); // returns Croppper Component
+const Cropper = () => {
+  return useCropper(({ avatarProps, zoomSliderProps, onSave, onCancel }) => {
+    return ...
+  })
+} // returns Croppper Component
 ```
 <b>Note:</b> useCropper returns a Cropper Component which renders our image cropper.
 
